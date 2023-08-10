@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    	<meta charset="utf-8">
+        <title>Калькулятор на JavaScript</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<style>
+.stoimost_flex{
+	display: flex;
+	align-items: center;
+}
+#stoimost{
+	padding-left: 5px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card{
+	border: 2px solid #000;
+	width: 1600px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.input__card__cart{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.input__card__delivery{
+	display: flex;
+	align-items: center;
+	gap: 23px;
+}
+
+.input__card__items{
+	display: flex;
+	align-items: center;
+	gap: 13px;
+}
+
+.input__card__time{
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
+
+.price{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.form{
+	padding: 10px;
+}
+
+.page__title__block{
+	padding: 10px;
+}
+
+.input__distance{
+}
+
+.card__flex{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="card">
+	<div class="card__inner">
+		<div class="page__title__block">
+			<h1 class="page__title">DELIVERY FEE CALCULATOR</h1>
+		</div>
+		<div class="form">
+				<div class="input__card__cart">
+					<p class="input__title">Cart Value</p>
+					<input class="input__cart" type="text" name="Cart Value" id="Cart__value">
+					<p>€</p>
+				</div>
+				<div class="card__flex">
+					<div class="input__card__delivery">
+						<p class="input__title">Delivery<br>distance</p>
+						<input class="input__distance" type="text" name="Delivery distance" id="Delivery__distance" value="">
+					</div>
+					<p>m</p>
+				</div>
+				<div class="input__card__items">
+					<p class="input__title">Amount of<br> items</p>
+					<input class="input__items" type="text" name="Amount of items" id="Amount__of__items" value="">
+				</div>
+				<button onclick="total_price();">Calculate delivery price</button>
+				<div class="price">
+					<p class="Delivery_price">Delivery price:</p>
+					<div id="price">0€</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<script>
+function total_price(){
+	Cart_value =  document.getElementById('Cart__value').value;
+	Delivery_distance =  document.getElementById('Delivery__distance').value;
+	Amount_of_items =  document.getElementById('Amount__of__items').value;
+	finally_price = 0.0;
+	if(Cart_value < 10){
+		finally_price += 10 - Cart_value;
+	}
+	if(Delivery_distance >= 1000){
+		finally_price += Math.floor(Delivery_distance / 500);
+	}
+	if(Amount_of_items >= 5){
+		finally_price += (Amount_of_items - 4) * 0.5;
+	}
+	if(Amount_of_items > 12){
+		finally_price += 1.2;
+	}
+	if(total_price > 15){
+		finally_price = 15;
+	}
+	if(Cart_value >= 100){
+		finally_price = 0;
+	}
+	document.getElementById('price').innerHTML = finally_price.toFixed(2) + "€";
+}
+</script>
+</body>
+</html>

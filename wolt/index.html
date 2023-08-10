@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    	<meta charset="utf-8">
+        <title>Калькулятор на JavaScript</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<script>
+	function raschitat() {
+	cvet  = document.getElementById('cvet').value;
+	switch (cvet) {
+	   case "serii":
+	      cena = 440;
+	      break
+	   case "goluboi":
+	      cena = 480;
+	      break   
+	    case "geltii":
+	      cena = 380;
+	      break   
+	   default:
+	      cena = 440;
+	      break
+	}
+	shirina  = document.getElementById('shirina').value;
+	dlina  = document.getElementById('dlina').value;
+	if(shirina == ""){
+	alert("Вы не указали ширину");
+	} else if(dlina == ""){
+	alert("Вы не указали длину");
+	} else {
+	ploschad = parseFloat (shirina)* parseFloat (dlina);
+	stoimost = ploschad*cena;
+	document.getElementById('stoimost').innerHTML = stoimost +" р.";
+	}
+	}
+</script>
+<style>
+.stoimost_flex{
+	display: flex;
+	align-items: center;
+}
+#stoimost{
+	padding-left: 5px;
+}
+</style>
+    </head>
+    <body>
+<h3>Расчет стоимости линолеума</h3>
+<select id="cvet">
+<option value="serii">Серый</option>
+<option value="geltii">Желтый</option>
+<option value="goluboi">Голубой</option>
+</select>
+	<input type="text" id="shirina" value="" placeholder="укажите ширину помещения">
+	<input type="text" id="dlina" value="" placeholder="укажите длину помещения">
+	<button onclick="raschitat();">Рассчитать стоимость</button>
+<div class="stoimost_flex">
+	<p class="Delivery_price">Delivery price:</p>
+	<div id="stoimost">1</div>
+</div>
+    </body>
+</html>
