@@ -2,6 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<meta charset="utf-8">
         <title>Калькулятор на JavaScript</title>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
@@ -43,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .card{
 	border: 2px solid #000;
-	width: 1600px;
+	width: 400px;
 	margin: 0 auto;
 	margin-top: 100px;
 }
@@ -135,12 +136,15 @@ function total_price(){
 	Cart_value =  document.getElementById('Cart__value').value;
 	Delivery_distance =  document.getElementById('Delivery__distance').value;
 	Amount_of_items =  document.getElementById('Amount__of__items').value;
-	finally_price = 0.0;
+	finally_price = 0;
 	if(Cart_value < 10){
 		finally_price += 10 - Cart_value;
 	}
 	if(Delivery_distance >= 1000){
 		finally_price += Math.floor(Delivery_distance / 500);
+		if(Delivery_distance % 500 != 0){
+			finally_price += 1
+		}
 	}
 	if(Amount_of_items >= 5){
 		finally_price += (Amount_of_items - 4) * 0.5;
