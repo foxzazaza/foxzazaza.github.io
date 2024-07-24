@@ -1,0 +1,179 @@
+body{
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Archangelsk';
+}
+
+*,
+*:after,
+*:before{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.landing__page{
+    background: url(header.svg) center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    padding-top: 39px;
+    justify-content: space-between;
+}
+
+.header__nav{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 33px;
+    float: right;
+
+}
+
+.nav__item{
+     font-family: "Rubik Mono One", monospace;
+     opacity: 0.7;
+}
+
+.title__text{
+    font-family: "Saira Condensed", sans-serif;
+    font-size: 130px;
+    line-height: 130px;
+}
+
+.title{
+    position: absolute;
+    top: 30%;
+}
+
+.red{
+    color: #B53232;
+}
+
+.academy{
+    height: 740px;
+    display: flex;
+    align-items: center;
+}
+
+.academy__inner{
+    display: flex;
+    gap: 115px;
+    justify-content: center;
+    top: 50%;
+}
+
+.academy__info__text{
+    color: black;
+    font-family: Saira Condensed;
+    padding-top: 60px;
+}
+
+.academy__info__title{
+    color: black;
+    font-family: Saira Condensed;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.motivate{
+    background: black;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+.motivate__text{
+    font-family: "oswald", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: normal;
+}
+
+.block__motivate{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.motivate__inner{
+    display: flex;
+    justify-content: center;
+    top: 50%;
+}
+
+.player__week__page{
+    background: url() center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px){
+    .container{
+        width: 100%;
+        padding: 0 15px;
+    }
+
+        .photo{
+        max-width: 100%;
+    }
+    .academy__inner{
+        display: flex;
+        text-align: center;
+        gap: 30px;
+        justify-content: center;
+        top: 50%;
+        flex-wrap: wrap;
+    }
+
+    .academy__info__text{
+    color: black;
+    font-family: Saira Condensed;
+    padding-top: 30px;
+}
+    .motivate__text{
+    font-family: "oswald", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: normal;
+}
+
+}
+
+@media screen and (max-width: 768px){
+    .header__nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .header__nav{
+        display: none;
+    }
+
+        .motivate__text{
+    font-family: "oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: normal;
+}
+}
